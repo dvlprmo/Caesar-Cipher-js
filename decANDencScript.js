@@ -18,17 +18,17 @@ function encryepted_text(text, shift)
     for(var i=0; i < text.length; i++){
         var temp = text[i];
 
-        // for letter case:
+        // check if it is lowercase letter so we code it using unicode id for that specific letter code. 
         if(temp.match(/[a-z]/i)){
-            // code it
+            // get the unicode of every letter in the string
             var code = text.charCodeAt(i)
 
-            // uppercase letter
+            // uppercase letter. Encrypt uppercase letter
             if(code >= 65 && code <= 90){
                 temp = String.fromCharCode(((code-65+shift) % 26) + 65)
 
             }
-            // for lowercase cases:
+            // for lowercase cases. Encrypt lowercase letter
             else if(code >= 97 && code <= 122){
                 temp = String.fromCharCode(((code-97+shift)%26) + 97)
             }
@@ -51,17 +51,17 @@ function decrypted_text(text, shift){
     for(var i=0; i < text.length; i++){
         var temp = text[i];
 
-        // for letter case:
+        //  // check if it is lowercase letter so we code it using unicode id for that specific letter code. 
         if(temp.match(/[a-z]/i)){
-            // code it
+            // get the unicode of every letter in the string
             var code = text.charCodeAt(i)
 
-            // uppercase letter
+            // uppercase letter. Encrypt uppercase letter
             if(code >= 65 && code <= 90){
                 temp = String.fromCharCode(((code-65-shift) % 26) + 65)
 
             }
-            // for lowercase cases:
+            // for lowercase cases. Encrypt lowercase letter
             else if(code >= 97 && code <= 122){
                 temp = String.fromCharCode(((code-97-shift)%26) + 97)
             }
